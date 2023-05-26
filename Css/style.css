@@ -1,0 +1,18 @@
+*{}
+p{}
+#title-1{}
+.bg-yellow{}
+[id]{}
+[id="title-1"]{}
+[href="https://www.yahoo.com"]{}
+[class^="title"]{}
+[href$=".com"]{}
+[class|=title]{}
+[href*="127"]{}
+[href^="http"]{}
+a,p,h1{}
+main>p{}
+h1+*{}
+h1~*{}
+/*main>:nth-child(n+1){color: forestgreen;}*/
+main:nth-child(1){color: forestgreen;}
