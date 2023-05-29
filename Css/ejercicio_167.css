@@ -1,0 +1,12 @@
+.hid{
+    background-color: aqua;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+.auto {
+    background-color: rgb(17, 198, 27);
+    width: 200px;
+    height: 100px;
+    overflow: auto;
+}
