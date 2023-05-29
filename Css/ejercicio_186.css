@@ -1,0 +1,15 @@
+div{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    outline-style: hidden;
+    outline-width: 5px;
+    }
+div:hover{
+    outline-style: double;
+    outline-width: 5px;
+    }
+div:active{
+    outline-width: 15px;
+}
