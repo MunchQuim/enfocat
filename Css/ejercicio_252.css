@@ -1,0 +1,45 @@
+body{
+    background-color: orange;
+}
+.blanco{
+    background-color: white;
+    width: calc(100% + 10px);
+    }
+div{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.a0{
+width:20px;
+height:20px;
+}
+.a2{
+    width:40px;
+    height:40px;
+}
+.a4{
+    width:60px;
+    height:60px;
+}
+.a6{
+    width:80px;
+    height:80px;
+}
+.a8{
+    width:100px;
+    height:100px;
+}
+.gris{
+    background-color: gray;
+}
+.circulo{
+        border-radius: 100%;
+}
