@@ -1,45 +1,79 @@
-body{
-    background-color: orange;
+body {
+  background-color: orange;
 }
-.blanco{
-    background-color: white;
-    width: calc(100% + 10px);
-    }
-div{
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 120px;
-    left: 120px;
+.verti {
+  width: 2px;
+  height: 180px;
+  left: 107px;
+  top: 18px;
+}
+.hori {
+  height: 2px;
+  width: 180px;
+  top: 107px;
+  left: 18px;
+}
+div {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  }
+.linea {
+  background-color: black;
 }
 
-.rojo{
-    background-color: red;
+.blanco {
+  background-color: white;
 }
 
-.a0{
-width:20px;
-height:20px;
+.rojo {
+  background-color: red;
 }
-.a2{
-    width:40px;
-    height:40px;
+.gris {
+  background-color: rgb(196, 194, 194);
 }
-.a4{
-    width:60px;
-    height:60px;
+.negro {
+  background-color: black;
+  }
+  .int{
+    scale: 0.9;
+  left: 7px;
+  }
+  .ext{
+    scale: 1;
+    left: 9px;
+  }
+.a0 {
+  scale: 0.1;
 }
-.a6{
-    width:80px;
-    height:80px;
+.a1 {
+  scale: 0.2;
 }
-.a8{
-    width:100px;
-    height:100px;
+.a2 {
+  scale: 0.3;
 }
-.gris{
-    background-color: gray;
+.a3 {
+  scale: 0.4;
 }
-.circulo{
-        border-radius: 100%;
+.a4 {
+  scale: 0.5;
+}
+.a5 {
+  scale: 0.6;
+}
+.a6 {
+  scale: 0.7;
+}
+.a7 {
+  scale: 0.8;
+}
+.a8 {
+  scale: 0.85;
+}
+.a9 {
+  scale: 0.9;
+}
+
+.circulo {
+  border-radius: 100%;
 }
