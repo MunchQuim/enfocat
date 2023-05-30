@@ -1,5 +1,6 @@
 body {
-  background-color: orange;
+  background-color: rgb(125, 194, 125);
+  
 }
 .verti {
   width: 2px;
@@ -17,6 +18,7 @@ div {
   width: 200px;
   height: 200px;
   position: absolute;
+  margin: 10%;
   }
 .linea {
   background-color: black;
