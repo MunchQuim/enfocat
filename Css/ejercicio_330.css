@@ -1,0 +1,74 @@
+body {
+  margin: 0px;
+}
+div {
+  width: 100vw;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.naranja {
+  background-color: orange;
+  height: 5vh;
+}
+.verde {
+  background-color: greenyellow;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  clear: both;
+  height: 20vh;
+}
+.azul {
+  background-color: skyblue;
+  height: 8vh;
+}
+.gris {
+  background-color: grey;
+  height: 8vh;
+  width: 48vw;
+}
+.izq {
+  float: left;
+}
+.der {
+  float: right;
+}
+.cuerpo-4 {
+  margin-bottom: 3vh;
+}
+.pie-4 {
+  margin-bottom: 5vh;
+}
+/*para movil*/
+@media (max-width: 320px) {
+}
+/*para monitor*/
+@media (min-width: 850px) {
+  .naranja {
+    height: 10vh;
+  }
+  .encabezado-1 {
+    float: left;
+    width: 48vw;
+  }
+  .encabezado-2 {
+    float: right;
+    width: 48vw;
+    margin-bottom: 5vh;
+  }
+  .verde {
+    height: 30vh;
+  }
+  .azul{
+    float: left;
+    width: 33vw;
+    height: 33vw ;
+  }
+  .cuerpo-3{
+    margin-inline: 0.5vh;
+    
+  }
+  .gris{
+      }
+}

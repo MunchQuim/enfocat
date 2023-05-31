@@ -1,6 +1,5 @@
 body {
   background-color: rgb(125, 194, 125);
-  
 }
 .verti {
   width: 2px;
@@ -19,7 +18,7 @@ div {
   height: 200px;
   position: absolute;
   margin: 10%;
-  }
+}
 .linea {
   background-color: black;
 }
@@ -36,15 +35,15 @@ div {
 }
 .negro {
   background-color: black;
-  }
-  .int{
-    scale: 0.9;
+}
+.int {
+  scale: 0.9;
   left: 7px;
-  }
-  .ext{
-    scale: 1;
-    left: 9px;
-  }
+}
+.ext {
+  scale: 1;
+  left: 9px;
+}
 .a0 {
   scale: 0.1;
 }
