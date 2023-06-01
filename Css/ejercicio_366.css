@@ -42,7 +42,7 @@ div {
 @media (max-width: 425px) {
   .container {
     background-color: azure;
-    grid-template-rows: 1fr 1fr repeat(2, 3fr) repeat(3, 2fr);
+    grid-template-rows: repeat(2,1fr) repeat(2, 3fr) repeat(3, 2fr);
   }
 }
 @media (min-width: 425px) and (max-width: 768px) {
