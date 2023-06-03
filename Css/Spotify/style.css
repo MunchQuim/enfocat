@@ -8,10 +8,6 @@ body {
     font-family: sans-serif;
 }
 
-[class|="container"] {
-    /* outline: solid 4px purple; */
-}
-
 img {
     width: 100%;
     height: auto;
@@ -19,7 +15,8 @@ img {
 
 .nomargin {
     margin: 0px;
-    font-size: small;
+    font-size: 11px;
+    color: rgb(190, 190, 190);
 }
 
 .grey {
