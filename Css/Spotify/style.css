@@ -1,0 +1,93 @@
+body {
+    display: grid;
+    width: 600px;
+    /*tiene que ser 1,5x la segunda fila*/
+    grid-template-rows: 400px 250px 400px;
+    /*cambia segun calcules las correctas*/
+    margin: 0px 10% 20px 10%;
+}
+
+[class|="container"] {
+    outline: solid 4px purple;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/*****************************************************/
+.container-1 {
+    outline: dotted 4px gold;
+    background-color: white;
+    height: 60px;
+    /*puede variar*/
+    width: 600px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+[class|="subcontainer_1"] {
+    outline: dashed 1px yellowgreen;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center
+        /*borrame*/
+}
+
+.subcontainer_1-1 {
+    height: 100%;
+    width: 150px;
+}
+
+.subcontainer_1-2 {
+    justify-content: space-around;
+    height: 100%;
+    width: 250px;
+}
+
+/***********************************************************/
+.container-2 {
+    grid-row-start: 1;
+    background-image: url(./images/landing.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    color: white;
+}
+.nomargin{
+    margin: 0px;
+    font-size: small;
+}
+
+
+/**************************************************/
+.container-3 {
+    grid-row-start: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.subcontainer_3-1 {
+    outline: dotted 3px saddlebrown;
+    height: 25%;
+    width: 100%;
+}
+
+[class|="subcontainer_3_2"] {
+    outline: dotted 3px salmon;
+    height: 150px;
+    width: 150px;
+}
+
+/***********************************************/
+.container-4 {
+    grid-row-start: 3;
+    margin: 0px 2%;
+    background-color: green;
+}
