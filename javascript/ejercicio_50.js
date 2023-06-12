@@ -9,10 +9,11 @@ const A_dato =[variable_1,variable_2,variable_3,variable_4,variable_5];
 let bucle = A_dato.length - 1;
 //      2+3     //
 while (bucle>= 0){
-    console.log (A_dato[bucle] + " es un \"" + typeof(A_dato[bucle]));
+    console.log (A_dato[bucle] + " es un \"" + typeof(A_dato[bucle]) + "\"");
     bucle -=1;
+    //for each simplificaria este bucle y evitaria que tuviera que estar en "negativo"//
 }
-
+//      4       //
 let Vglobal = "Hola! Soy una variable global.";
 
 if (true){
