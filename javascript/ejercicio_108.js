@@ -20,8 +20,8 @@ console.log(malaIdea.flatMap((num)=>num == "🌶"? [num , "🥵"]: num));
 //      ejercicio 6     //
 let baraja = ["🎴","🎴","🎴","🃏","🎴","🎴","🎴"];
 //console.log(baraja.flatMap((num)=>baraja[baraja.indexOf(num)] === baraja[1+baraja.indexOf(num)] ? ["🎴","🃏"]: " "));
-console.log(baraja.flatMap((value, index, array) => baraja[index] === baraja[index+1] && index+1 != baraja.length
-     ? ["🎴","🃏"]
+console.log(baraja.flatMap((value, index, array) => baraja[index] === baraja[index+1]
+     ? [value,"🃏"]
      : value
 ));
 
