@@ -4,18 +4,18 @@ let emojis = ["😀","🍕","🐳","🍞","🦄","🦈","👩‍🦰","🐱","�
 let nueva = [];
 const nueva_array = document.getElementById("nueva_array");
 const wrhtml = (addTxt)=>{
-    nueva_array.innerHTML = addTxt;
+    nueva_array.innerHTML = "[" + addTxt + "]";
 };
 
 //      PRUEBA      //
 const btnPush = document.getElementById("btnPush");
 btnPush.addEventListener("click", push)
-
+wrhtml(nueva);
 
 
 //push//
 function push() {
-    if (emojis.length >= 0){
+    if (emojis.length > 0){
     let randomChar = Math.floor(Math.random()*emojis.length);
     nueva.push(emojis[randomChar]);
     emojis.splice(randomChar,1);
@@ -28,7 +28,7 @@ function push() {
     }
 
 };
-// push(emojis);
+
 //unshift//
 function unshift(arr){
     let sacrificio = Math.floor(Math.random()*emojis.length);
