@@ -12,27 +12,29 @@
     <section>
         <article class="bordeado">
             <button class="boton" id="btnPush">Push</button>
-            <button class="boton">Unshift</button>
-            <button class="boton">Insert at</button>
-            <input class="quantity numerador" min="0" name="form-0-quantity" value="1" type="number">
+            <button class="boton" id="btnUnshift">Unshift</button>
+            <button class="boton" id="btnInsert">Insert at</button>
+            <input class="numerador" id="posInsert" min="0" max="*jsvariable*" name="form-0-quantity" value="0" type="number">
+            
             
         </article>
         <article class="bordeado">
-            <button class="boton">Pop</button>
-            <button class="boton">Shift</button>
-            <button class="boton">Remove at</button>
-            <input class="quantity numerador" min="0" name="form-0-quantity" value="1" type="number">
+            <button class="boton" id="btnPop">Pop</button>
+            <button class="boton" id="btnShift">Shift</button>
+            <button class="boton" id="btnRemove">Remove at</button>
+            <input class="numerador" id="posRemove" min="0" max="*jsvariable*" name="form-0-quantity" value="0" type="number">
         </article>
         <article class="bordeado" id="Array"><!-- array creado -->
-            <div id="nueva_array">
+            <div class="absolute" id="nueva_array">
             </div>
         </article>
-        <article class="invisible"><!-- array invisible -->
+        <article class="invisible" id="oculto" ><!-- array invisible -->
             <div>
 
             </div>
         </article>
     </section>
     <script src="ejercicio_204.js"></script>
+    
 </body>
 </html>
