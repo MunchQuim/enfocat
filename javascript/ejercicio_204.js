@@ -9,20 +9,6 @@ const wrhtml = (addTxt) => {
     nueva_array.innerHTML = "[" + addTxt + "]";
 }
 
-// prueba
-
-/* let valIn = document.querySelector("posInsert"); */
-
-/* if(document.querySelector("posInsert")>nueva.length){
-document.querySelector("posInsert")=nueva.length;
-} */
-console.log(document.getElementById("posInsert").value);
-
-
-
-
-
-
 //      Eventos      //
 
 //push//
@@ -60,7 +46,7 @@ function push() {
         emojis.splice(randomChar, 1);
         wrhtml(nueva);
         max();
-        /* animacion(); */
+        
     }
     else {
         console.log("No quedan emojis 😱");
@@ -84,14 +70,14 @@ function unshift() {
 
 //insert at_function//
 function insert() {
-    if (posinsert.value > nueva.length) {
+    /* if (posinsert.value > nueva.length) {
         posinsert.value = nueva.length;
-    }
+    } */
     if (emojis.length > 0) {
         let randomChar = Math.floor(Math.random() * emojis.length);
-        if (nueva.length == 0) {
+        if (nueva.length == 0 || nueva.length==posinsert.value) {
             nueva.push(emojis[randomChar]);
-        } else {
+        }else {
             nueva = nueva.flatMap((value, index) => index == posinsert.value ? [emojis[randomChar], value] : value);
         }
         emojis.splice(randomChar, 1);
@@ -155,7 +141,8 @@ function max() {
     }
 }
 //animacion_function//
-/* function animacion() {
+/* function animacion(obj) {
+    const objeto = nueva_array[index];
     let start = Date.now();
 
     let timer = setInterval(function() {
@@ -164,12 +151,12 @@ function max() {
             clearInterval(timer); // finish the animation after 1 seconds
             return;
         }
-        draw(timePassed);
+        move(timePassed);
     }, 20);
-
-function draw(timePassed) {
-    nueva_array.style.bottom = timePassed / 5 + 'px';
-  }
+    
+ function move(timePassed) {
+    
+  } 
 } */
 //      Ejecución inicio        //
 max();
