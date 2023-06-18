@@ -45,8 +45,7 @@ function push() {
         nueva.push(emojis[randomChar]);
         emojis.splice(randomChar, 1);
         wrhtml(nueva);
-        max();
-        
+        max();     
     }
     else {
         console.log("No quedan emojis 😱");
@@ -59,8 +58,6 @@ function unshift() {
         let randomChar = Math.floor(Math.random() * emojis.length);
         nueva.unshift(emojis[randomChar]);
         emojis.splice(randomChar, 1);
-        console.log(emojis + "\n" + emojis.length);
-        console.log("Tu increible array; " + nueva);
         wrhtml(nueva);
         max();
     } else {
@@ -141,7 +138,9 @@ function max() {
     }
 }
 //animacion_function//
-/* function animacion(obj) {
+ /* function animacion(obj) {
+    nueva_array[index]
+
     const objeto = nueva_array[index];
     let start = Date.now();
 
@@ -151,13 +150,9 @@ function max() {
             clearInterval(timer); // finish the animation after 1 seconds
             return;
         }
-        move(timePassed);
+        
     }, 20);
-    
- function move(timePassed) {
-    
-  } 
-} */
+}  */
 //      Ejecución inicio        //
 max();
 wrhtml(nueva);
