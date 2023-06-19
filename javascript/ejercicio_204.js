@@ -70,6 +70,7 @@ function insert() {
     /* if (posinsert.value > nueva.length) {
         posinsert.value = nueva.length;
     } */
+    max();
     if (emojis.length > 0) {
         let randomChar = Math.floor(Math.random() * emojis.length);
         if (nueva.length == 0 || nueva.length==posinsert.value) {
@@ -112,6 +113,7 @@ function shift() {
 
 //remove at_function//
 function remove() {
+    max();
     if (nueva.length > 0) {
         emojis.unshift(nueva[posremove.value]);
         nueva.splice(posremove.value, 1);

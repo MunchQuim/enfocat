@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="ejercicio_206.css">
-</head>
+    <link rel="stylesheet" href="ejercicio_206.css" />
+  </head>
 
-<body>
+  <body>
+    <section id="pantalla-1">
+      <button onclick="start()" class="Menu" id="menu_btn">Pulse START</button>
+    </section>
 
-    <button onclick="start()" class="Menu" id="menu_btn">Pulse START</button>
+    <div class="Oculto" id="pantalla-2">
+      <div id="lblName">Escriba su nombre</div>
+      <input
+        type="text"
+        name="su_nombre"
+        id="inputName"
+        placeholder="Ej: Mortadelo"
+      />
+      <button onclick="guardar_nombre()" id="name_btn">Guardar nombre</button>
+    </div>
 
-    <div class="Oculto" id="nombrador">
-        <label for="su_nombre">Escriba su nombre</label>
-        <input type="text" class="Nombrador" name="su_nombre" id="inputName" placeholder="Ej: Mortadelo">
-        <button onclick="guardar_nombre()" id="nombre_btn">Guardar nombre</button>
+    <section class="Oculto" id="pantalla-3">
+      <div class="Saludos">
+        Hola <span class="Saludos" id="miNombre"></span>
+      </div>
+      <div class="Escoge">Escoja su contrincante</div>
+
+      <article class="Contrincantes" id="contrincantes">
+        <button onclick="estadisticas(rockyDmg,rockyVida,rockyName)" id="rocky_rock">
+          Rocky Rock
+        </button>
+        <button
+          onclick="estadisticas(albertoDmg,albertoVida,albertoName)"
+          id="alberto_manostijeras"
+        >
+          Alberto Manostijeras
+        </button>
+        <button onclick="estadisticas(randyDmg,randyVida,randyName)" id="randy">Randy Random</button>
+      </article>
+    </section>
+
+    <section class="Oculto" id="pantalla-4">
+      <div id="miNombre-2"></div>
+      <div id="Vs">VS</div>
+      <div id="nombreRival"></div>
+      <div id="miVida"></div>
+      <div id="rivalVida"></div>
+      <div id="timer"></div>
+      <article></article>
+      <article id="opciones">
+        <button onclick="opcion(0)" id="piedra">💎</button>
+        <button onclick="opcion(1)" id="papel">🧻</button>
+        <button onclick="opcion(2)" id="tijeras">✂</button>
+      </article>
+      <div id="tuOpcion"></div>
+      <div id="rivalOpcion"></div>
+    </section>
+    <div id="pantalla-5" class="Oculto">
+        <div></div>
+        <button onclick="reset()">vuelve a comenzar</button>
     </div>
 
 
-    <section class="Oculto Menu-2" id="contrincantes">
-        <div>Hola <span id="miNombre"></span></div>
-        <div>Escoja su contrincante</div>
-
-        <article class="Oculto Contrincantes">
-            <button id="rocky_rock">a</button>
-            <button id="alberto_dedostijeras">b</button>
-            <button id="randy">c</button>
-        </article>
-    </section>
-
-    <section class="Oculto Menu-3" id="tabletop">
-        <article class="Opciones Oculto">
-            <button id="piedra">💎</button>
-            <button id="papel">🧻</button>
-            <button id="tijeras">✂</button>
-            
-        </article>
-        <div></div>
-    </section>
-
-
-
-
     <script src="ejercicio_206.js"></script>
-</body>
-
+  </body>
 </html>
