@@ -1,5 +1,5 @@
 const iconos = ["💎", "🧻", "✂", "🔫"];
-const nombre = "";
+let nombre = "";
 
 //      funciones       //
 
@@ -57,8 +57,11 @@ function start() {
     document.getElementById("menu_btn").style.display = "none";
     document.getElementById("nombrador").style.display = "flex";
 }
-function guardar_nombre(nombre) {
-    nombre
+function guardar_nombre() {
+    nombre=document.getElementById("inputName").value;
+    document.getElementById("nombrador").style.display = "none";
+    document.getElementById("contrincantes").style.display = "block";
+    document.getElementById("miNombre").innerText = nombre;
 }
 //
 

@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="ejercicio_206.css">
 </head>
+
 <body>
-    
+
     <button onclick="start()" class="Menu" id="menu_btn">Pulse START</button>
 
     <div class="Oculto" id="nombrador">
         <label for="su_nombre">Escriba su nombre</label>
-        <input type="text" class="Nombrador" name="su_nombre" placeholder="Ej: Mortadelo">
-        <button id="nombre_btn">Guardar nombre</button>
+        <input type="text" class="Nombrador" name="su_nombre" id="inputName" placeholder="Ej: Mortadelo">
+        <button onclick="guardar_nombre()" id="nombre_btn">Guardar nombre</button>
     </div>
-    
 
-    <section class="Oculto">
-        <div id="rocky_rock"></div>
-        <div id="alberto_manostijeras"></div>
-        <div id="randy"></div>
+
+    <section class="Oculto Menu-2" id="contrincantes">
+        <div>Hola <span id="miNombre"></span></div>
+        <div>Escoja su contrincante</div>
+
+        <article class="Oculto Contrincantes">
+            <button id="rocky_rock">a</button>
+            <button id="alberto_dedostijeras">b</button>
+            <button id="randy">c</button>
+        </article>
+    </section>
+
+    <section class="Oculto Menu-3" id="tabletop">
+        <article class="Opciones Oculto">
+            <button id="piedra">💎</button>
+            <button id="papel">🧻</button>
+            <button id="tijeras">✂</button>
+            
+        </article>
+        <div></div>
     </section>
 
 
@@ -28,4 +45,5 @@
 
     <script src="ejercicio_206.js"></script>
 </body>
+
 </html>
