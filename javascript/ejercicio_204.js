@@ -45,7 +45,9 @@ function push() {
         nueva.push(emojis[randomChar]);
         emojis.splice(randomChar, 1);
         wrhtml(nueva);
-        max();     
+        max();
+        entrar(1);     
+        
     }
     else {
         console.log("No quedan emojis 😱");
@@ -159,3 +161,18 @@ function max() {
 max();
 wrhtml(nueva);
 
+//-----------------------------------------//
+/*function entrar(index){
+nueva_array.textContent.animate(
+    {
+      // keyframes
+       transform: "rotate(360deg)",
+       { transform: "translateY(-300px)" }, 
+    },
+    {
+      // timing options
+      duration: 1000,
+      iterations: Infinity,
+    }
+  ); 
+}*/
