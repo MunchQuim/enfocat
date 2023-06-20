@@ -1,13 +1,13 @@
-const iconos = ["💎", "🧻", "✂", "🔫"];
-let numero = 4;
+const iconos = ["💎", "🧻", "✂", "🔫", ""];
+let numero = 5;
 
-let corazones = ["","💔","💖"];
-let miscorazones="";
-let rivcorazones="";
+let corazones = ["", "💔", "💖"];
+let miscorazones = "";
+let rivcorazones = "";
 let midaño = 0;
 let rivaldaño = 0;
 let nombre = "";
-
+let tempo = true;
 let mivida = 3;
 let eneVida = 0;
 let eneDmg = 0;
@@ -15,13 +15,13 @@ let eneNom = "";
 
 //      funciones       //
 
-
 //combate_funcion//
 function combate(maquina, persona) {
+    opcion(4);
     document.getElementById("rivalOpcion").innerHTML = iconos[maquina];
     if (maquina == persona) {
         empate(persona, maquina);
-    } else
+    } else {
         switch ((maquina + persona)) {
             case 1:
                 if (persona > maquina) {
@@ -46,37 +46,49 @@ function combate(maquina, persona) {
                 break;
             default:
                 console.log("¡¿PERO QUE?!");
+                mivida -= 0;
+                formarvida(mivida);
+                if (mivida <= 0) {
+                    Final("DERROTA");
+                }
                 break;
         }
+    }
     let sec = 2;
-    let timer = setInterval(function () {
+    let tiempo = setInterval(function () {
+        if (tempo == false) { clearInterval(tiempo); }
         sec--;
         if (sec < 0) {
-            clearInterval(timer);
-            numero = 4;
+            clearInterval(tiempo);
+            document.getElementById("rivalOpcion").innerHTML = iconos[4];
+            
             timer();
         }
     }, 1000);
-
 }
 
 //ganar_funcion//
 function ganar(per, maq) {
-    document.getElementById("timer").innerHTML = iconos[per] + "🆚" + iconos[maq] +
+    document.getElementById("timer").innerText = iconos[per] + "🆚" + iconos[maq] +
         "\n¡Has ganado!\n😊";
     eneVida--;
+    formarvidarival(eneVida);
     if (eneVida <= 0) {
-
+        Final("VICTORIA");
     }
 }
 //perder_funcion//
 function perder(per, maq) {
-    document.getElementById("timer").innerHTML = iconos[per] + "🆚" + iconos[maq] + "\n¡Has perdido!\n😭";
+    document.getElementById("timer").innerText = iconos[per] + "🆚" + iconos[maq] + "\n¡Has perdido!\n😭";
     mivida -= eneDmg;
+    formarvida(mivida);
+    if (mivida <= 0) {
+        Final("DERROTA");
+    }
 }
 //empate_funcion//
 function empate(per, maq) {
-    document.getElementById("timer").innerHTML = iconos[per] + "🆚" + iconos[maq] + "\n¡EMPATE!\n¡OTRA VEZ!";
+    document.getElementById("timer").innerText = iconos[per] + "🆚" + iconos[maq] + "\n¡EMPATE!\n¡OTRA VEZ!";
 }
 
 //  funciones_html  //
@@ -128,17 +140,20 @@ function estadisticas(dmg, vida, nom) {
     document.getElementById("miNombre-2").innerText = nombre;
     document.getElementById("nombreRival").innerText = eneNom;
     formarvida(mivida);
-    console.log(mivida);
     formarvidarival(eneVida);
-    console.log(eneVida);
+    tempo = true;
+    timer();
 
-    
+
 }
 //funcion tiempo//
 function timer() {
-    let sec = 3;
+    let sec = 2;
+    document.getElementById("timer").innerText = sec + 1;
     let timer = setInterval(function () {
-        document.getElementById("timer").innerHTML = sec;
+        if (tempo == false) { clearInterval(timer); }
+        document.getElementById("timer").innerText = sec;
+        console.log(sec);
         sec--;
         if (sec < 0) {
             clearInterval(timer);
@@ -154,7 +169,7 @@ function timer() {
                     break;
             }
         }
-    }, 1000);
+    }, 1500);
 }
 //funcion opcion//
 function opcion(key) {
@@ -162,52 +177,73 @@ function opcion(key) {
     numero = key;
 }
 //funcion victoria//
-function victoria() {
+function Final(fin) {
+    tempo = false;
     document.getElementById("pantalla-4").style.display = "none";
-    document.getElementById("pantalla-4").style.display = "none";
-    document.getElementById("pantalla-5").style.display = "block";
-    document.getElementById("pantalla-5").style.backgroundColor = "skyblue";
-    document.getElementById("pantalla-5").style.color = "blue";
-    document.getElementById("pantalla-5").innerText = "VICTORIA";
+    document.getElementById("pantalla-5").style.display = "flex";
+    document.getElementById("mensaje").style.backgroundColor = "skyblue";
+    document.getElementById("mensaje").style.color = "blue";
+    document.getElementById("mensaje").innerHTML = fin;
+    document.getElementById("rivalOpcion").innerHTML = iconos[4];
+    opcion(4);
+    const collection = document.getElementById("pantalla-5").children;
+    for (let i = 0; i < collection.length; i++) {
+        collection[i].style.display = "block";
+    }
+
 
 }
 //funcion derrota//
-function derrota() {
+/* function derrota() {
     document.getElementById("pantalla-4").style.display = "none";
     document.getElementById("pantalla-5").style.display = "block";
     document.getElementById("pantalla-5").style.backgroundColor = "black";
     document.getElementById("pantalla-5").style.color = "white";
     document.getElementById("pantalla-5").innerText = "DERROTA";
 
-}
+} */
 //funcion reset//
 function reset() {
     numero = 4;
-    nombre = "";
     mivida = 3;
     eneVida = 0;
     eneDmg = 0;
     eneNom = "";
+    document.getElementById("pantalla-3").style.display = "grid";
+    document.getElementById("miNombre").innerText = nombre;
+    const collection = document.getElementById("pantalla-3").children;
+    for (let i = 0; i < collection.length; i++) {
+        switch (i) {
+            case 2:
+                collection[i].style.display = "flex";
+                break;
+
+            default:
+                collection[i].style.display = "block";
+                break;
+        }
+    }
+    const rivales = document.getElementById("contrincantes").children;
+    for (let i = 0; i < rivales.length; i++) {
+        rivales[i].style.display = "block";
+    }
     document.getElementById("pantalla-5").style.display = "none";
-    document.getElementById("pantalla-1").style.display = "block";
 }
 //funcion formar vida//
 function formarvida(params) {
     miscorazones = "";
     for (let index = 0; index < params; index++) {
-        miscorazones = miscorazones.concat(corazones[2-midaño]);
-        midaño=0;        
+        miscorazones = miscorazones.concat(corazones[2]);
     }
-    document.getElementById("miVida").innerText = miscorazones;    
+    document.getElementById("miVida").innerText = miscorazones;
 }
 //funcion formar vida rival//
 function formarvidarival(params) {
-    rivcorazones="";
+    rivcorazones = "";
     for (let index = 0; index < params; index++) {
-        rivcorazones= rivcorazones.concat(corazones[2-rivaldaño]);
-        rivaldaño=0;        
+        rivcorazones = rivcorazones.concat(corazones[2]);
     }
-    document.getElementById("rivalVida").innerText = rivcorazones;    
+    document.getElementById("rivalVida").innerText = rivcorazones;
 }
 
 //resultado//
