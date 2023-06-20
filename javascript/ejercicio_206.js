@@ -2,17 +2,13 @@ const iconos = ["💎", "🧻", "✂", "🔫"];
 let numero = 4;
 
 let corazones = ["","💔","💖"];
-let miscorazones=[];
-let rivcorazones=[];
-
-function formarvida(num){
-    miscorazones+=corazones[2]*num;
-    console.log(miscorazones);
-}
-formarvida(3);
-
+let miscorazones="";
+let rivcorazones="";
+let midaño = 0;
+let rivaldaño = 0;
 let nombre = "";
-let vida = 6;
+
+let mivida = 3;
 let eneVida = 0;
 let eneDmg = 0;
 let eneNom = "";
@@ -76,7 +72,7 @@ function ganar(per, maq) {
 //perder_funcion//
 function perder(per, maq) {
     document.getElementById("timer").innerHTML = iconos[per] + "🆚" + iconos[maq] + "\n¡Has perdido!\n😭";
-    vida -= eneDmg;
+    mivida -= eneDmg;
 }
 //empate_funcion//
 function empate(per, maq) {
@@ -131,6 +127,11 @@ function estadisticas(dmg, vida, nom) {
     }
     document.getElementById("miNombre-2").innerText = nombre;
     document.getElementById("nombreRival").innerText = eneNom;
+    formarvida(mivida);
+    console.log(mivida);
+    formarvidarival(eneVida);
+    console.log(eneVida);
+
     
 }
 //funcion tiempo//
@@ -183,16 +184,31 @@ function derrota() {
 function reset() {
     numero = 4;
     nombre = "";
-    vida = 3;
+    mivida = 3;
     eneVida = 0;
     eneDmg = 0;
     eneNom = "";
     document.getElementById("pantalla-5").style.display = "none";
     document.getElementById("pantalla-1").style.display = "block";
-
-
 }
-
+//funcion formar vida//
+function formarvida(params) {
+    miscorazones = "";
+    for (let index = 0; index < params; index++) {
+        miscorazones = miscorazones.concat(corazones[2-midaño]);
+        midaño=0;        
+    }
+    document.getElementById("miVida").innerText = miscorazones;    
+}
+//funcion formar vida rival//
+function formarvidarival(params) {
+    rivcorazones="";
+    for (let index = 0; index < params; index++) {
+        rivcorazones= rivcorazones.concat(corazones[2-rivaldaño]);
+        rivaldaño=0;        
+    }
+    document.getElementById("rivalVida").innerText = rivcorazones;    
+}
 
 //resultado//
 
