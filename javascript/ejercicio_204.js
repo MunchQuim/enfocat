@@ -46,8 +46,8 @@ function push() {
         emojis.splice(randomChar, 1);
         wrhtml(nueva);
         max();
-        entrar(1);     
-        
+        entrar();
+
     }
     else {
         console.log("No quedan emojis 😱");
@@ -75,9 +75,9 @@ function insert() {
     max();
     if (emojis.length > 0) {
         let randomChar = Math.floor(Math.random() * emojis.length);
-        if (nueva.length == 0 || nueva.length==posinsert.value) {
+        if (nueva.length == 0 || nueva.length == posinsert.value) {
             nueva.push(emojis[randomChar]);
-        }else {
+        } else {
             nueva = nueva.flatMap((value, index) => index == posinsert.value ? [emojis[randomChar], value] : value);
         }
         emojis.splice(randomChar, 1);
@@ -142,37 +142,37 @@ function max() {
     }
 }
 //animacion_function//
- /* function animacion(obj) {
-    nueva_array[index]
+/* function animacion(obj) {
+   nueva_array[index]
 
-    const objeto = nueva_array[index];
-    let start = Date.now();
+   const objeto = nueva_array[index];
+   let start = Date.now();
 
-    let timer = setInterval(function() {
-        let timePassed = Date.now() - start;
-        if (timePassed >= 1000) {
-            clearInterval(timer); // finish the animation after 1 seconds
-            return;
-        }
-        
-    }, 20);
+   let timer = setInterval(function() {
+       let timePassed = Date.now() - start;
+       if (timePassed >= 1000) {
+           clearInterval(timer); // finish the animation after 1 seconds
+           return;
+       }
+       
+   }, 20);
 }  */
 //      Ejecución inicio        //
 max();
 wrhtml(nueva);
 
 //-----------------------------------------//
-/*function entrar(index){
-nueva_array.textContent.animate(
-    {
-      // keyframes
-       transform: "rotate(360deg)",
-       { transform: "translateY(-300px)" }, 
-    },
-    {
-      // timing options
-      duration: 1000,
-      iterations: Infinity,
-    }
-  ); 
-}*/
+function entrar(index) {
+    /* nueva_array.textContent.animate(
+        [
+            // keyframes
+            { transform: "rotate(360deg)" },
+            { transform: "translateY(-300px)" },],
+        {
+            // timing options
+            duration: 1000,
+            iterations: Infinity,
+        }
+    ); */
+    console.log(nueva_array.innerHTML[2]);
+}
