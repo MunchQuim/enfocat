@@ -46,7 +46,6 @@ function push() {
         emojis.splice(randomChar, 1);
         wrhtml(nueva);
         max();
-        entrar();
 
     }
     else {
