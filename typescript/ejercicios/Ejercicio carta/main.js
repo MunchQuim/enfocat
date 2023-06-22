@@ -1,5 +1,5 @@
 const rev = document.getElementById("reverso");
-let interruptor = false;
+let interruptor = true;
 const int = document.getElementById("interactuable");
 int.addEventListener("mouseenter", hover);
 int.addEventListener("mouseleave", leave);

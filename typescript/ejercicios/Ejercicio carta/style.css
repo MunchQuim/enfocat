@@ -9,6 +9,8 @@ div {
   height: 437.344px;
   width: 300px;
   margin: 0px;
+  border: solid 1px black;
+  border-radius: 10px;
   transition: width 0.1s ease,visibility 0s 0.5s;
 }
 
