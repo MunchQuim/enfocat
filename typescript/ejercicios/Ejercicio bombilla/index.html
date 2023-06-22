@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <script src="main.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="box">
+      <img class="bombilla" id="bombilla-1" src="./img/off.jpg" />
+      <img class="bombilla" id="bombilla-2" src="./img/on.jpg" />
+    </div>
+    <article>
+      <div>
+        <img onclick="btn_click()" id="button" src="./img/boff.jpg" alt="" />
+      </div>
+      <div class="oculto" id="zoom">
+        Zoom <br /><input oninput="tamano()" type="range" min="50" max ="100" id="inZoom" />
+      </div>
+
+      <div class="oculto" id="opa">
+        Brillo <br /><input oninput="opacity()" type="range" min="0" max="100" id="inpOpa" />
+      </div>
+      <div class="oculto" id="rot">
+        Angulo <br /><input oninput="rota()" type="range" min="-360" max="360" id="inRot" />
+      </div>
+
+      <script src="main.js"></script>
+    </article>
+  </body>
 </html>
