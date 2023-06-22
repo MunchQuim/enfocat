@@ -1,20 +1,14 @@
 div {
+  margin: 13% 40%;
   height: 437.344px;
   width: 300px;
   display:flex;
   justify-content: center;
 }
-#anverso {
-  display: none;
-  height: 437.344px;
-  width: 300px;
-  margin: 0px;
-  transition: width 0.5s ease;
-}
 #reverso {
   height: 437.344px;
   width: 300px;
   margin: 0px;
-  transition: width 0.5s ease;
+  transition: width 0.1s ease,visibility 0s 0.5s;
 }
 
