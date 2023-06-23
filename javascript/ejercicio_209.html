@@ -7,61 +7,73 @@
     <link rel="stylesheet" href="ejercicio_209.css" />
   </head>
   <body>
+    <article id="pokebox"><!-- aqui va el pokemon -->
+      <div id="nombre"> Vulpix </div>
+      <img src="./img/vulpix.gif" id="pokemon">
+      <div id="stats">
+        <div id="vida"></div>
+        <div class="container">
+          <div id="felicidad"></div>
+        </div>
+        <div></div>
+      </div>
+    </article>
     <div class="box-1">
       <div class="colores verde">
         <div class="column">
           <div class="row">
             <!-- iconos -->
-            <div class="icono_verde"></div>
-            <div class="icono_verde"></div>
-            <div class="icono_verde"></div>
+            <div onclick="comer(1)" onmouseenter="zoom('helado')" onmouseleave="noZoom('helado')" id="helado" class="icono_verde">🍦</div>
+            <div onclick="comer(2)" onmouseenter="zoom('zanahoria')" onmouseleave="noZoom('zanahoria')" id="zanahoria" class="icono_verde">🥕</div>
+            <div onclick="comer(3)" onmouseenter="zoom('carne')" onmouseleave="noZoom('carne')" id="carne" class="icono_verde">🍖</div>
           </div>
-          <div>
-            <!-- barra -->
-            <div></div>
+          <div class="container">
+            <!-- barra hambre -->
+            <div id="hambre"></div>
+            
           </div>
           <div><!-- descripcion --></div>
         </div>
       </div>
       <div class="colores amarillo">
-        <div class="column">
+        <div class="column is_right">
           <div class="row">
             <!-- iconos -->
-            <div class="icono_amarillo"></div>
-            <div class="icono_amarillo"></div>
-            <div class="icono_amarillo"></div>
+            <div onmouseenter="zoom('video')" onmouseleave="noZoom('video')" id="video" class="icono_amarillo">🎮</div>
+            <div onmouseenter="zoom('pelota')" onmouseleave="noZoom('pelota')" id="pelota" class="icono_amarillo">⚾</div>
+            <div onmouseenter="zoom('ajedrez')" onmouseleave="noZoom('ajedrez')" id="ajedrez" class="icono_amarillo">♟</div>
           </div>
-          <div>
-            <!-- barra -->
-            <div></div>
+          <div class="container">
+            <!-- barra entretenimiento -->
+            <div id="entretenimiento"></div>
           </div>
           <div><!-- descripcion --></div>
         </div>
       </div>
       <div class="colores rojo">
-        <div class="column">
+        <div class="column is_bot">
           <div class="row">
             <!-- iconos -->
-            <div class="icono_rojo"></div>
-            <div class="icono_rojo"></div>
+            <div onmouseenter="zoom('fuerza')" onmouseleave="noZoom('fuerza')" id="entreno" class="icono_rojo">🥊</div>
+            <div onmouseenter="zoom('correr')" onmouseleave="noZoom('correr')" id="correr" class="icono_rojo">🏃‍♂️</div>
           </div>
-          <div>
-            <!-- barra -->
-            <div></div>
+          <div class="container">
+            <!-- barra fuerza-->
+            <div id="fuerza"></div>
           </div>
           <div><!-- descripcion --></div>
         </div>
       </div>
       <div class="colores azul">
-        <div class="column">
+        <div class="column is_right is_bot">
           <div class="row">
             <!-- iconos -->
-            <div class="icono_azul"></div>
-            <div class="icono_azul"></div>
+            <div onmouseenter="zoom('dormir')" onmouseleave="noZoom('dormir')" id="dormir" class="icono_azul">🛏</div>
+            <div onmouseenter="zoom('pasear')" onmouseleave="noZoom('pasear')" id="pasear" class="icono_azul">⛅</div>
           </div>
-          <div>
-            <!-- barra -->
-            <div></div>
+          <div class="container">
+            <!-- barra energia-->
+            <div id="energia"></div>
           </div>
           <div><!-- descripcion --></div>
         </div>
