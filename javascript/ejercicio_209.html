@@ -6,13 +6,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="ejercicio_209.css" />
   </head>
-  <body>
+  <body id="todo">
+    <div id="game_over">Game over 💔<br> <span id="puntuacion">Puntuacion:</span></div>
     <article id="pokebox"><!-- aqui va el pokemon -->
       <div id="nombre"> Vulpix </div>
       <img src="./img/vulpix.gif" id="pokemon">
       <div id="stats">
         <div id="vida"></div>
-        <div class="container">
+        <div class="container" id="c_felicidad">
           <div id="felicidad"></div>
         </div>
         <div></div>
@@ -27,7 +28,7 @@
             <div onclick="comer(2)" onmouseenter="zoom('zanahoria')" onmouseleave="noZoom('zanahoria')" id="zanahoria" class="icono_verde">🥕</div>
             <div onclick="comer(3)" onmouseenter="zoom('carne')" onmouseleave="noZoom('carne')" id="carne" class="icono_verde">🍖</div>
           </div>
-          <div class="container">
+          <div class="container" id="c_hambre">
             <!-- barra hambre -->
             <div id="hambre"></div>
             
@@ -39,11 +40,11 @@
         <div class="column is_right">
           <div class="row">
             <!-- iconos -->
-            <div onmouseenter="zoom('video')" onmouseleave="noZoom('video')" id="video" class="icono_amarillo">🎮</div>
-            <div onmouseenter="zoom('pelota')" onmouseleave="noZoom('pelota')" id="pelota" class="icono_amarillo">⚾</div>
-            <div onmouseenter="zoom('ajedrez')" onmouseleave="noZoom('ajedrez')" id="ajedrez" class="icono_amarillo">♟</div>
+            <div onclick="entretener(1)" onmouseenter="zoom('video')" onmouseleave="noZoom('video')" id="video" class="icono_amarillo">🎮</div>
+            <div onclick="entretener(2)" onmouseenter="zoom('pelota')" onmouseleave="noZoom('pelota')" id="pelota" class="icono_amarillo">⚾</div>
+            <div onclick="entretener(3)" onmouseenter="zoom('ajedrez')" onmouseleave="noZoom('ajedrez')" id="ajedrez" class="icono_amarillo">♟</div>
           </div>
-          <div class="container">
+          <div class="container" id="c_entre">
             <!-- barra entretenimiento -->
             <div id="entretenimiento"></div>
           </div>
@@ -54,10 +55,10 @@
         <div class="column is_bot">
           <div class="row">
             <!-- iconos -->
-            <div onmouseenter="zoom('fuerza')" onmouseleave="noZoom('fuerza')" id="entreno" class="icono_rojo">🥊</div>
-            <div onmouseenter="zoom('correr')" onmouseleave="noZoom('correr')" id="correr" class="icono_rojo">🏃‍♂️</div>
+            <div onclick="ejercicio(1)" onmouseenter="zoom('entreno')" onmouseleave="noZoom('entreno')" id="entreno" class="icono_rojo">🥊</div>
+            <div onclick="ejercicio(2)" onmouseenter="zoom('correr')" onmouseleave="noZoom('correr')" id="correr" class="icono_rojo">🏃‍♂️</div>
           </div>
-          <div class="container">
+          <div class="container"id="c_fuerza">
             <!-- barra fuerza-->
             <div id="fuerza"></div>
           </div>
@@ -68,10 +69,10 @@
         <div class="column is_right is_bot">
           <div class="row">
             <!-- iconos -->
-            <div onmouseenter="zoom('dormir')" onmouseleave="noZoom('dormir')" id="dormir" class="icono_azul">🛏</div>
-            <div onmouseenter="zoom('pasear')" onmouseleave="noZoom('pasear')" id="pasear" class="icono_azul">⛅</div>
+            <div onclick="descansar(1)" onmouseenter="zoom('dormir')" onmouseleave="noZoom('dormir')" id="dormir" class="icono_azul">🛏</div>
+            <div onclick="descansar(2)" onmouseenter="zoom('pasear')" onmouseleave="noZoom('pasear')" id="pasear" class="icono_azul">⛅</div>
           </div>
-          <div class="container">
+          <div class="container" id="c_energia">
             <!-- barra energia-->
             <div id="energia"></div>
           </div>
