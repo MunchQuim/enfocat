@@ -80,14 +80,17 @@ function comer(comida) {
             lvl_hambre += 10;
             lvl_entretenimiento += 10;
             lvl_fuerza -= 10;
+            click('helado');
             break;
         case 2://zanahoria, ++hambre -entretenimiento 
             lvl_hambre = lvl_hambre + 20;
             lvl_entretenimiento = lvl_entretenimiento - 10;
+            click('zanahoria');
             break;
         case 3://carne, +++hambre
             lvl_hambre += 30;
             lvl_fuerza += 5;
+            click('carne');
             break;
     }
     max();
@@ -96,14 +99,17 @@ function entretener(ent) {
     switch (ent) {
         case 1:// videojuegos entretenimiento +++
             lvl_entretenimiento += 30;
+            click('video');
             break;
         case 2:// pelota entretenimiento ++ ejercicio +
             lvl_fuerza += 5;
             lvl_entretenimiento += 20;
             lvl_energia -= 5;
+            click('pelota');
             break;
         case 3:// ajedrez entretenimiento ++
             lvl_entretenimiento += 20;
+            click('ajedrez');
             break;
     }
     max();
@@ -116,19 +122,15 @@ function ejercicio(eje) {
             lvl_hambre -= 5;
             if (Math.floor(Math.random() * 5) == 0) {
                 vida--;
-                document.getElementById("entreno").style.scale = "0.9";
-                setTimeout(() => {
-                    document.getElementById("entreno").style.scale = "1.2";
-                }, 100);
-
-
             }
+            click('entreno');
             //perder vida aleatoriamente.
             break;
         case 2:// atletismo fuerza +++ energia- hambre -
             lvl_fuerza += 20;
             lvl_energia -= 5;
             lvl_hambre -= 5;
+            click('correr');
             break;
     }
     max();
@@ -137,10 +139,12 @@ function descansar(des) {
     switch (des) {
         case 1://dormir energia +++ pausa?
             lvl_energia += 100;
+            click('dormir');
             // temporizador en que todo deja de funcionar
             break;
         case 2:// pasear energia +
             lvl_energia += 20;
+            click('pasear');
             break;
     }
     max();
@@ -270,7 +274,7 @@ function ticks(time) {//actualiza las barras cada time ms
                 vida++;
             }
         }
-        if (vida == 0) {
+        if (vida <= 0) {
             game_over();
         }
         // puntua
@@ -292,9 +296,9 @@ function perdervida(barra, check) {
             let ham = setInterval(() => {
                 if (on_ham == true) { clearInterval(ham); }
                 if (intentos > 0) {//de quedar intentos hay
-                    let num = Math.floor(Math.random() * 5);
+                    let num = Math.floor(Math.random() * 2);
 
-                    if (num == 0) {// un 20% de probabilidades
+                    if (num == 0) {// un 50% de probabilidades
                         intentos--; //de perder un intento
                     }
                 } else {//si no quedan intentos
@@ -386,4 +390,10 @@ function game_over(puntos) {
     document.getElementById("game_over").style.display = "flex";
     document.getElementById("puntuacion").innerText = "Puntuacion:" + puntuacion + "";
 
+}
+function click(id){
+    document.getElementById(""+id+"").style.scale = "0.9";
+                setTimeout(() => {
+                    document.getElementById(""+id+"").style.scale = "1.2";
+                }, 100);
 }
