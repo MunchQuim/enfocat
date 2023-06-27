@@ -28,3 +28,6 @@ VALUES ("Elvis","87654321B","1532-1-2");-- tambien podemos cambiarlo asi
 -- los inserts se pueden stackear ("Elvis","87654321B","1532-1-2"),("Elvis","87654321B","1532-1-2");
 
 SELECT * FROM DB_PRIMERA.personajes;
+
+SHOW VARIABLES LIKE "max_allowed_packet"; -- permite ver el maximo tamaño de paquetes
+-- un set @@global.max_allowed_packet = "num" permitiria aumentar ese valor

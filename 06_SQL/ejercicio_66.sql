@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS db_primera;
+CREATE DATABASE IF NOT EXISTS db_primera;
+USE db_primera;
+CREATE TABLE IF NOT EXISTS Entidad_Relacion(
+id_entidad INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+fecha DATE,
+texto VARCHAR(255),
+numero INTEGER,
+decima DECIMAL
+);
+
