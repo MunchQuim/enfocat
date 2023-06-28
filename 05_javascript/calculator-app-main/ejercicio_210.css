@@ -4,5 +4,11 @@
   background-color: blue;
 }
 #pad{
-    background-color: white;
+  display: flex;
 }
+#pad>*{
+  border-radius: 1px;
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0px 2px 0px 0px hsl(224, 28%, 35%);    
+}
+

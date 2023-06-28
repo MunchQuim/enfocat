@@ -30,4 +30,7 @@ VALUES ("Elvis","87654321B","1532-1-2");-- tambien podemos cambiarlo asi
 SELECT * FROM DB_PRIMERA.personajes;
 
 SHOW VARIABLES LIKE "max_allowed_packet"; -- permite ver el maximo tamaño de paquetes
--- un set @@global.max_allowed_packet = "num" permitiria aumentar ese valor
+
+-- un select @@global.max_allowed_packet
+-- set @@global.max_allowed_packet = "num" permitiria aumentar ese valor
+-- cuidado con el delete que si no pones el where se puede ir todo a la verga
