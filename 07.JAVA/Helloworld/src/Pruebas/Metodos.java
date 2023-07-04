@@ -1,4 +1,5 @@
 package Pruebas;
+import java.util.Scanner;
 
 public class Metodos {
 	
@@ -97,13 +98,199 @@ public class Metodos {
 				break;
 			}
 			
-		}System.out.println(result);
+			}System.out.println(result);
+		}	
+	}
+	
+	public void arbolito(){
+		String text = "";
+		
+		Scanner miPunta = new Scanner(System.in);  // escanea la punta del arbol
+	    System.out.println("Que ancho debe tener la punta del arbol?");
+	    byte ini_star = miPunta.nextByte();
+	    
+	    Scanner miBase = new Scanner(System.in);
+	    if(ini_star%2==0) {//dependiendo de si es par o emite un mensaje u otro, escanea la base de la copa del arbol.
+	    System.out.println("Que ancho debe tener base de la copa del arbol?\n Ha de ser PAR y mayor que: "+ini_star);
+	    }else {
+	    System.out.println("Que ancho debe tener base de la copa del arbol?\n Ha de ser IMPAR y mayor que: "+ini_star);
+	    }
+	    byte end_star = miBase.nextByte();
+	    byte BUCLES = (byte)((end_star-ini_star)/2);
+	    
+	    Scanner miAncho = new Scanner(System.in);
+	    if(ini_star%2==0) {//dependiendo de si es par o emite un mensaje u otro, escanea la base de la copa del arbol.
+		    System.out.println("Que ancho debe tener el tronco del arbol?\n Ha de ser PAR y menor que: "+end_star);
+		    }else {
+		    System.out.println("Que ancho debe tener el tronco del arbol?\n Ha de ser IMPAR y menor que: "+end_star);
+		    }
+	    byte ancho = miAncho.nextByte();
+	    
+	    Scanner miLargo = new Scanner(System.in);
+	    System.out.println("Que altura debe tener el tronco?");
+		byte largo = miLargo.nextByte();
+				
+		if (ini_star<end_star && end_star>ancho && ((ini_star%2 == 0 && end_star%2 == 0 && ancho%2 == 0)||(ini_star%2 != 0 && end_star%2 != 0&& ancho%2 != 0))) {
+		//funcion que hace copas//
+			for (int i = 0; i < BUCLES ; i++) {
+				for (int j = 0; j < end_star; j++) {
+					
+					if (j>((end_star-ini_star)/2)-1 && j<end_star-((end_star-ini_star)/2)) {
+						text += "*";
+					}else {
+						text +=" ";
+					}				
+				}		
+				System.out.println(text);
+				ini_star +=2;
+				text = "";
+			}
+			//funcion que hace tronco//
+			//ejecuta la funcion tantas veces como el largo, al final de esta imprime una linea
+			for (int i = 0; i < largo ; i++) {
+				
+				for (int j = 0; j < end_star; j++) {
+					/*la funcion añade espacios siempre que no este a una posicion de la diferencia entre la copa y el ancho 
+					atencion que pasa si la copa es mas pequeña que el tronco*/
+					if (j>((end_star-ancho)/2)-1 && j<(end_star-(end_star-ancho)/2)) {
+						text += "*";
+					}else {
+						text +=" ";
+					}				
+				}		
+				System.out.println(text);
+				text = "";
+				
+			}
+		}else {
+			System.out.println("procura que siga los parametros establecidos");
 		}
-		
-		
-		
 		
 	}
 	
+	public void arbolito_2(){
+		boolean interruptor = true;
+		byte fase = 0;
+		String text = "";
+		byte ini_star = 0;
+		byte end_star = 0;
+		byte BUCLES = 0;
+		byte ancho = 0;
+		byte largo = 0;
+		
+		while(interruptor == true) {
+			
+			switch (fase) {
+			case 0: {
+				Scanner miPunta = new Scanner(System.in);  // escanea la punta del arbol
+			    System.out.println("Que ancho debe tener la punta del arbol?\n No debe ser mayor a 50");
+			    ini_star = miPunta.nextByte();
+			    if(ini_star>50) {
+			    	System.out.println("Porfavor, siga las instrucciones");				 
+			    }else {				    		
+			    	fase ++;    				    		
+			    }	
+			    continue;
+			}
+			case 1: {
+				Scanner miBase = new Scanner(System.in);
+			    if(ini_star%2==0) {//dependiendo de si es par o emite un mensaje u otro, escanea la base de la copa del arbol.
+			    System.out.println("Que ancho debe tener base de la copa del arbol?\n Ha de ser PAR y mayor que: "+ini_star+"\nNo puede ser mayor a 99");
+			    }else {
+			    System.out.println("Que ancho debe tener base de la copa del arbol?\n Ha de ser IMPAR y mayor que: "+ini_star+"\nNo puede ser mayor a 99");
+			    }
+			    end_star = miBase.nextByte();
+			    if(((ini_star%2==0 && end_star%2==0)||(ini_star%2!=0 && end_star%2!=0))&&end_star<99) {
+			    	BUCLES = (byte)((end_star-ini_star)/2);
+			    	fase++;
+			    }else {
+			    	System.out.println("Porfavor, siga las instrucciones");
+			    }		
+			    continue;
+			}
+			case 2: {
+				Scanner miAncho = new Scanner(System.in);
+			    if(ini_star%2==0) {//dependiendo de si es par o emite un mensaje u otro, escanea la base de la copa del arbol.
+				    System.out.println("Que ancho debe tener el tronco del arbol?\n Ha de ser PAR y menor que: "+end_star);
+				    }else {
+				    System.out.println("Que ancho debe tener el tronco del arbol?\n Ha de ser IMPAR y menor que: "+end_star);
+				    }
+			    
+			    if(((ini_star%2==0 && ancho%2==0)||(ini_star%2!=0 && ancho%2!=0))&&ancho<end_star) {
+			    	ancho = miAncho.nextByte();
+			    	fase++;
+			    }else {
+			    	System.out.println("Porfavor, siga las instrucciones");
+			    }		
+			    continue;
+			    
+			}
+			case 3:{
+				Scanner miLargo = new Scanner(System.in);
+			    System.out.println("Que altura debe tener el tronco?");
+				largo = miLargo.nextByte();
+				break;
+			}
+			
+			}//switch
+			
+		}//while
+		   
+		
+		
+			
+			
+			
+		
+		    
+		
+		//////////////////////////////////////
+		
+	    /////////////////////////////////////////
+	    
+	    /////////////////////////////////////////////
+		if (ini_star<end_star && end_star>ancho && ((ini_star%2 == 0 && end_star%2 == 0 && ancho%2 == 0)||(ini_star%2 != 0 && end_star%2 != 0&& ancho%2 != 0))) {
+			//funcion que hace copas//
+				for (int i = 0; i < BUCLES ; i++) {
+					for (int j = 0; j < end_star; j++) {
+						
+						if (j>((end_star-ini_star)/2)-1 && j<end_star-((end_star-ini_star)/2)) {
+							text += "*";
+						}else {
+							text +=" ";
+						}				
+					}		
+					System.out.println(text);
+					ini_star +=2;
+					text = "";
+				}
+				//funcion que hace tronco//
+				//ejecuta la funcion tantas veces como el largo, al final de esta imprime una linea
+				for (int i = 0; i < largo ; i++) {
+					
+					for (int j = 0; j < end_star; j++) {
+						/*la funcion añade espacios siempre que no este a una posicion de la diferencia entre la copa y el ancho 
+						atencion que pasa si la copa es mas pequeña que el tronco*/
+						if (j>((end_star-ancho)/2)-1 && j<(end_star-(end_star-ancho)/2)) {
+							text += "*";
+						}else {
+							text +=" ";
+						}				
+					}		
+					System.out.println(text);
+					text = "";
+					
+				}
+			}else {
+				System.out.println("procura que siga los parametros establecidos");
+			}
+			
+		}
+	    ///////////////////////////////////////////////////////
+	    
+		///////////////////////////////////////////////////////		
+		
+
 }
+
 
