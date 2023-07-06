@@ -204,7 +204,7 @@ public class Metodos {
 			    end_star = miBase.nextByte();
 			    if(((ini_star%2==0 && end_star%2==0)||(ini_star%2!=0 && end_star%2!=0)) && end_star>ini_star && end_star<=99 ) {//hay mucho codigo pero basicamente implica que los datos anteriores
 			    	//ambos sean o pares o impares pero no diferentes, ademas debe estar entre ini_star y 99
-			    	BUCLES = (byte)((end_star-ini_star)/2);
+			    	BUCLES = (byte)(end_star-ini_star);
 			    	fase++;
 			    }else {
 			    	System.out.println("Porfavor, siga las instrucciones");
@@ -246,8 +246,8 @@ public class Metodos {
 		}//while
 		
 			//Estas lineas de codigo hacen que  se genere el arbol con los parametros definidos en el bucle anterior
-				for (int i = 0; i < BUCLES ; i++) {// BUCLES es la diferencia entre las estrellas iniciales y finales, divididas entre 2 porque
-					//se añaden 2 estrellas por bucle, en definitiva determina la altura de la copa del arbol
+				while (ini_star<=end_star) {// determina que se de un bucle hasta que ini_star supere end_star
+					//osea determina las lineas de la copa
 					for (int j = 0; j < end_star; j++) {//este codigo determina en que posiciones se añaden *, recorre por cada altura de la copa tantas posiciones como el end_star 
 						//que representa el máximo de la copa.
 						
