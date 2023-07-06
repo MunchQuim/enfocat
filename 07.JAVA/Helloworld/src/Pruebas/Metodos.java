@@ -1,5 +1,7 @@
 package Pruebas;
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class Metodos {
 	
@@ -253,9 +255,9 @@ public class Metodos {
 						
 						if (j>((end_star-ini_star)/2)-1 && j<end_star-((end_star-ini_star)/2)) {//si la posicion se encuentra a una distancia de la diferencia/2 de cualquiera de las esquinas
 							//queriendo decir que son las posiciones centrales en la cantidad de ini_star existente asigna a la variable text un *
-							text += "*";
+							text += "\033[102;92m*\033[0m";
 						}else {//de lo contrario asigna un espacio
-							text +=" ";
+							text +="\033[106m \033[0m";
 						}				
 					}		
 					System.out.println(text);//cuando ha asignado a texto todos sus elementos de la linea lo imprime.
@@ -270,9 +272,16 @@ public class Metodos {
 						//la funcion añade espacios siempre que no este a una posicion de la diferencia entre la copa y el ancho 
 						
 						if (j>((end_star-ancho)/2)-1 && j<(end_star-(end_star-ancho)/2)) {// como en el anterior añade * solo en las posiciones centrales en la distancia de la diferencia/2
-							text += "*";//solo que el grosor del tronco en este caso no varia
+							
+						text += "\033[100;90m*\033[0m";//solo que el grosor del tronco en este caso no varia
+								
+							
 						}else {
-							text +=" ";
+							if(i == largo-1) {
+							text +="\033[102m \033[0m";
+							}else {
+							text +="\033[106m \033[0m";
+							}
 						}				
 					}		
 					System.out.println(text);
@@ -280,7 +289,53 @@ public class Metodos {
 				}
 		}
 	    ///////////////////////////////////////////////////////
+	
+	    public void banderas() {
+	    final String RESET = "\033[0m";
+	    final String AZUL = "\033[48;5;12m";
+	    final String DARK_CYAN= "\033[48;5;27m";
+	    final String B_BLUE= "\033[48;5;32m";
+	    final String BLANCO= "\033[48;5;15m";
+	    final String ROJO= "\033[48;5;124m";
+	    final String B_ROJO= "\033[48;5;160m";
+	    final String B_NEGRO= "\033[48;5;0m";
+	    final String B_AMARILLO= "\033[48;5;11m";
+	    final String B_NARANJA= "\033[48;5;220m";
+	    byte alto =9;
+	    byte ancho =26;
+	    String color = "";
+	    String text = "";
+	    /*String[][] matrix = new String[2][1];
+	    String[0][0]
+	    System.out.println(matrix[0]);*/
 	    
+	    /*
+	     * veces,x,color
+	     * ucrania 4*13*AZUL + 4*13*AMARILLO
+	     * griega  {1*13*AZUL +1*13*BLANCO}//ALTERNADO + 2*(2*AZUL+1*BLANCO+2*AZUL)+1*5*BLANCO+2*(2*AZUL+1*BLANCO+2*AZUL)
+	     */
+	    //griega
+	    
+	    for (int i = 0; i < alto; i++) {
+			
+	    	for (int j = 0; j < ancho; j++) {
+	    		
+	    		if(i%2==0) {
+	    			color=DARK_CYAN;//parametrizar
+	    		}else {
+	    			color=BLANCO;//parametrizar
+	    		}
+	    		text+=color+" ";
+			}//for interior	     	
+	    	text +="\n";    	
+		}//for exterior
+	    System.out.println(text);
+	    
+	    //Puedo aprovechar CharAt() para referenciar a la nueva bandera y crearla.
+	    
+	    
+	    	
+	    }
 }
 
 
