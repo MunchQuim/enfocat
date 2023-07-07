@@ -290,52 +290,8 @@ public class Metodos {
 		}
 	    ///////////////////////////////////////////////////////
 	
-	    public void banderas() {
-	    final String RESET = "\033[0m";
-	    final String AZUL = "\033[48;5;12m";
-	    final String DARK_CYAN= "\033[48;5;27m";
-	    final String B_BLUE= "\033[48;5;32m";
-	    final String BLANCO= "\033[48;5;15m";
-	    final String ROJO= "\033[48;5;124m";
-	    final String B_ROJO= "\033[48;5;160m";
-	    final String B_NEGRO= "\033[48;5;0m";
-	    final String B_AMARILLO= "\033[48;5;11m";
-	    final String B_NARANJA= "\033[48;5;220m";
-	    byte alto =9;
-	    byte ancho =26;
-	    String color = "";
-	    String text = "";
-	    /*String[][] matrix = new String[2][1];
-	    String[0][0]
-	    System.out.println(matrix[0]);*/
 	    
-	    /*
-	     * veces,x,color
-	     * ucrania 4*13*AZUL + 4*13*AMARILLO
-	     * griega  {1*13*AZUL +1*13*BLANCO}//ALTERNADO + 2*(2*AZUL+1*BLANCO+2*AZUL)+1*5*BLANCO+2*(2*AZUL+1*BLANCO+2*AZUL)
-	     */
-	    //griega
-	    
-	    for (int i = 0; i < alto; i++) {
-			
-	    	for (int j = 0; j < ancho; j++) {
-	    		
-	    		if(i%2==0) {
-	    			color=DARK_CYAN;//parametrizar
-	    		}else {
-	    			color=BLANCO;//parametrizar
-	    		}
-	    		text+=color+" ";
-			}//for interior	     	
-	    	text +="\n";    	
-		}//for exterior
-	    System.out.println(text);
-	    
-	    //Puedo aprovechar CharAt() para referenciar a la nueva bandera y crearla.
-	    
-	    
-	    	
-	    }
+	   
 }
 
 
