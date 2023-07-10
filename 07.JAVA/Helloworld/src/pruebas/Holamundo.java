@@ -1,4 +1,4 @@
-package Pruebas;
+package pruebas;
 public class Holamundo {
 	public static void main(String[]args) {
 		Metodos myMetodos = new Metodos();

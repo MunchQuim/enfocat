@@ -1,8 +1,14 @@
-package Pruebas;
+package pruebas;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Iterator;
 
+
+/*
+ public static void main(String[]args) {
+		
+	} 
+ */
 public class Metodos {
 	
 	public void ejercicio1 ()
